@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -72,12 +73,24 @@ public class LambdaTestScenario implements AfterAWebdriverScenario, BeforeAWebdr
 		}
 	}
 
-	@Override
 	public DesiredCapabilities apply(EnvironmentVariables environmentVariables, SupportedWebDriver driver,
 			TestOutcome testOutcome, DesiredCapabilities capabilities) {
 
 		capabilities.setCapability("name", testOutcome.getStoryTitle() + " - " + testOutcome.getTitle());
 		return capabilities;
 
+	}
+
+	@Override
+	public boolean isActivated(EnvironmentVariables environmentVariables) {
+		// TODO Auto-generated method stub
+		return BeforeAWebdriverScenario.super.isActivated(environmentVariables);
+	}
+
+	@Override
+	public MutableCapabilities apply(EnvironmentVariables environmentVariables, SupportedWebDriver driver,
+			TestOutcome testOutcome, MutableCapabilities capabilities) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -2,9 +2,7 @@ package com.lambdatest.cucumber.steps;
 
 import com.lambdatest.cucumber.pages.TodoApp;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.*;
 
 public class TodoAppSteps {
     TodoApp todo;

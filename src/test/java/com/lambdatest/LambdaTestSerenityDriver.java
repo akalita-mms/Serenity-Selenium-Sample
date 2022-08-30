@@ -8,13 +8,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import net.thucydides.core.util.EnvironmentVariables;
-import net.thucydides.core.util.SystemEnvironmentVariables;
 import net.thucydides.core.webdriver.DriverSource;
 
 public class LambdaTestSerenityDriver implements DriverSource {
 
 	public WebDriver newDriver() {
-		EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
+		EnvironmentVariables environmentVariables = net.thucydides.core.environment.SystemEnvironmentVariables.createEnvironmentVariables();
 
 		String username = System.getenv("LT_USERNAME");
 		if (username == null) {
